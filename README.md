@@ -1,6 +1,6 @@
 # DugTool 2.0.0 #
 
-[Quick install link](https://raw.github.com/lufurt/DugTool/master/dist/DugTool.user.js)
+[Quick install link](https://github.com/yani2000/Dugtool/raw/main/Dugtool.user.js)
 
 This is a useful tool for Dugout Online game
 
