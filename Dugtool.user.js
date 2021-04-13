@@ -5,7 +5,7 @@
 // @include         http*dugout-online.com/players/details*playerID*
 // @include         http*dugout-online.com/players/none*
 // @include         http*dugout-online.com/clubinfo/bids/clubid*
-// @version         2.0.0
+// @version         2.0.1
 // ==/UserScript==
 
 // Current Original Version: v1.5.2
@@ -29,10 +29,11 @@
 * v1.5.3 Fixed compatibility with new Dugout 2015, fixed player count, added red color on too much players on Monday. (rokec)
 * v1.5.4 Added Form. (rokec)
 * v2.0.0 FIX: Fixed compatibility with new Dugout 2020 (rokec)
+* v2.0.1 FIX: When you sent scouts for a player (rokec)
 * vX.X.X adding bid page > transfer ad function << WIP
 */
 
-var APPNAME = "Dugtool v2.0.0";
+var APPNAME = "Dugtool v2.0.1";
 var FORUMLINK = "/forum/viewtopic/t/254714";
 
 var PageType = 0;
@@ -307,12 +308,8 @@ function doPlayerStuff()
         return;
     }
   	
-  	var tableA = 4;	
-  	
-  	var talentPanel = document.getElementById("talentPanel");
-  	if (!!talentPanel && talentPanel.children.length > 1) {
-        tableA++;
-    }
+  	var tableA = 4;
+  	tableA = tableA + document.querySelectorAll("#talentPanel table").length;
     
     //if (document.getElementsByName("startoffer").length < 1 && document.getElementsByName("riseoffer").length < 1) tableA = 3;
     if (document.getElementsByClassName("info").length < 1) tableA--;
